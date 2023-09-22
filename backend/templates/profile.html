@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Profile</title>
+    <!-- Add any CSS links or stylesheets here -->
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h1>Welcome {{ username }}</h1>
+          <h2>Your ADHD Assessments:</h2>
+          <ul>
+            {% for index, prediction in indexed_values %}
+            <li>Prediction {{ index + 1 }}: {{ prediction }}</li>
+            {% endfor %}
+          </ul>
+          <!-- <img src="{{ image_url }}" alt="Line Graph"> -->
+          <img
+            src="{{ url_for('static', filename=image_url) }}"
+            alt="Line Graph"
+          />
+
+          <hr />
+        </div>
+      </div>
+    </div>
+    <!-- Add any additional HTML content or scripts here -->
+  </body>
+</html>
